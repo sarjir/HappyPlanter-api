@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/sarajirholm/development/HappyPlanter-api/HappyPlanter-api.csproj",
-      "projectName": "HappyPlanter-api",
-      "projectPath": "/Users/sarajirholm/development/HappyPlanter-api/HappyPlanter-api.csproj",
+      "projectUniqueName": "/Users/sarajirholm/development/HappyPlanter-api/HappyPlanter/HappyPlanter.csproj",
+      "projectName": "HappyPlanter",
+      "projectPath": "/Users/sarajirholm/development/HappyPlanter-api/HappyPlanter/HappyPlanter.csproj",
       "packagesPath": "/Users/sarajirholm/.nuget/packages/",
-      "outputPath": "/Users/sarajirholm/development/HappyPlanter-api/obj/",
+      "outputPath": "/Users/sarajirholm/development/HappyPlanter-api/HappyPlanter/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/sarajirholm/.nuget/NuGet/NuGet.Config"

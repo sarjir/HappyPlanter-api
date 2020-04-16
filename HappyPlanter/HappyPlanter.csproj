@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-    <RootNamespace>HappyPlanter_api</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace HappyPlanter_api.Controllers
+namespace HappyPlanter.Controllers
 {
     [ApiController]
     [Route("[controller]")]

@@ -1,6 +1,6 @@
 using System;
 
-namespace HappyPlanter_api
+namespace HappyPlanter
 {
     public class WeatherForecast
     {
