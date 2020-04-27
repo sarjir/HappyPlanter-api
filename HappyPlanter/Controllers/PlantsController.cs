@@ -11,7 +11,7 @@ namespace HappyPlanter.Controllers {
   [Route ("[controller]")]
   public class PlantsController : ControllerBase {
     [HttpGet]
-    public string Get () {
+    public ActionResult Get () {
       var test = Environment.GetEnvironmentVariable ("DB_CONNECTION_STRING");
       var connection = new NpgsqlConnection (test);
 
@@ -22,7 +22,7 @@ namespace HappyPlanter.Controllers {
 
       plants.ForEach (plant => { Console.WriteLine (plant.Name); });
 
-      return "Hello from the /plants url!";
+      return Ok (plants);
     }
   }
 }
