@@ -16,3 +16,6 @@
 /Users/sarajirholm/development/HappyPlanter-api/HappyPlanter/obj/Debug/netcoreapp3.0/HappyPlanter.RazorTargetAssemblyInfo.cache
 /Users/sarajirholm/development/HappyPlanter-api/HappyPlanter/obj/Debug/netcoreapp3.0/HappyPlanter.dll
 /Users/sarajirholm/development/HappyPlanter-api/HappyPlanter/obj/Debug/netcoreapp3.0/HappyPlanter.pdb
+/Users/sarajirholm/development/HappyPlanter-api/HappyPlanter/bin/Debug/netcoreapp3.0/Dapper.dll
+/Users/sarajirholm/development/HappyPlanter-api/HappyPlanter/bin/Debug/netcoreapp3.0/Npgsql.dll
+/Users/sarajirholm/development/HappyPlanter-api/HappyPlanter/obj/Debug/netcoreapp3.0/HappyPlanter.csproj.CopyComplete
