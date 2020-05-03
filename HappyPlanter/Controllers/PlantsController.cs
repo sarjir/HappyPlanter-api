@@ -17,7 +17,7 @@ namespace HappyPlanter.Controllers {
 
       connection.Open ();
 
-      var selectAllFromPlants = "SELECT * FROM Plants";
+      var selectAllFromPlants = "SELECT * FROM Plant";
       var plants = connection.Query<Plant> (selectAllFromPlants).ToList ();
 
       plants.ForEach (plant => { Console.WriteLine (plant.Name); });

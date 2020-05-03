@@ -40,6 +40,10 @@
               "target": "Package",
               "version": "[2.0.35, )"
             },
+            "Microsoft.DotNet.Watcher.Tools": {
+              "target": "Package",
+              "version": "(, )"
+            },
             "Npgsql": {
               "target": "Package",
               "version": "[4.1.3.1, )"

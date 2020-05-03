@@ -7,7 +7,7 @@ services:
   happyplanter-api:
     image: happyplanter:latest
     depends_on:
-      - "postgres_image"
+      - postgres_image
     restart: always
     build:
       context: .
