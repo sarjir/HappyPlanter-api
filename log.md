@@ -1,5 +1,26 @@
 ### Log for creation of view
 
+_2020-05-11_
+I managed to create a view with the query created with Antons help!
+
+```sql
+CREATE VIEW intervals AS
+
+WITH plant_ids AS (SELECT DISTINCT plant_id FROM event),
+dates AS (SELECT
+	PI.plant_id,
+    (SELECT time_stamp FROM event WHERE plant_id = PI.plant_id ORDER BY time_stamp DESC LIMIT 1) AS latest_time,
+    (SELECT time_stamp FROM event WHERE plant_id = PI.plant_id ORDER BY time_stamp DESC LIMIT 1 OFFSET 4) AS fifth_time
+FROM plant_ids PI)
+
+
+SELECT
+    dates.plant_id,
+    age(dates.latest_time, dates.fifth_time) / 5 AS interval_time,
+    dates.latest_time
+FROM dates
+```
+
 _2020-05-06_
 I got some help from Anton and he wrote me this query
 
