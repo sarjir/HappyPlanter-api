@@ -23,6 +23,13 @@ namespace HappyPlanter.Controllers
       var selectAllFromInterval = $"SELECT * FROM Intervals WHERE planter_id={planter_id}";
       var intervals = connection.Query<Interval>(selectAllFromInterval).ToList();
 
+      var intervalsWithDaysUntilWater = calculateDaysUntilWater(intervals);
+
+      return Ok(intervalsWithDaysUntilWater);
+    }
+
+    private List<Interval> calculateDaysUntilWater(List<Interval> intervals)
+    {
       foreach (Interval singleInterval in intervals)
       {
         var latestTime = singleInterval.Latest_Time;
@@ -33,7 +40,7 @@ namespace HappyPlanter.Controllers
         singleInterval.Days_Until_Water = daysUntilWater;
       }
 
-      return Ok(intervals);
+      return intervals;
     }
   }
 }
