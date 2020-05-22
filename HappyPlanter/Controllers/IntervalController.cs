@@ -8,6 +8,13 @@ using Npgsql;
 
 namespace HappyPlanter.Controllers
 {
+  class Event
+  {
+    public int Id { get; set; }
+    public DateTime Time_Stamp { get; set; }
+    public string Event_Type { get; set; }
+    public int Plant_Id { get; set; }
+  }
   [ApiController]
   [Route("[controller]")]
   public class IntervalController : ControllerBase
@@ -26,6 +33,24 @@ namespace HappyPlanter.Controllers
       var intervalsWithDaysUntilWater = calculateDaysUntilWater(intervals);
 
       return Ok(intervalsWithDaysUntilWater);
+    }
+
+    [HttpPost("plant/{plant_id}/water")]
+    public ActionResult addWaterEvent(int plant_id)
+    {
+      var test = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
+      var connection = new NpgsqlConnection(test);
+
+      connection.Open();
+
+      var insertEvent = $"INSERT INTO Event VALUES (DEFAULT, Now(), 'water', {plant_id})";
+      var hello = connection.Query<Event>(insertEvent).ToList();
+      var latestEvent = $"SELECT * FROM Event WHERE plant_id={plant_id} ORDER BY Time_Stamp DESC LIMIT 1";
+      var goodbye = connection.Query<Event>(latestEvent).ToList();
+
+      Console.WriteLine("goodbye");
+      Console.WriteLine(goodbye);
+      return Ok(goodbye[0]);
     }
 
     private List<Interval> calculateDaysUntilWater(List<Interval> intervals)
