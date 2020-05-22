@@ -12,8 +12,8 @@ namespace HappyPlanter.Controllers
   [Route("[controller]")]
   public class IntervalController : ControllerBase
   {
-    [HttpGet]
-    public ActionResult Get(int planter_id)
+    [HttpGet("{planter_id}")]
+    public ActionResult GetPlantsForUser(int planter_id)
     {
       var test = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
       var connection = new NpgsqlConnection(test);
