@@ -1,5 +1,28 @@
 ### Log for creation of view
 
+_2020-05-20_
+Noticed that it the view I had created were missing the user_id, so I created a new view to add it.
+
+```sql
+CREATE VIEW intervals2 AS
+
+WITH plant_ids AS (SELECT DISTINCT plant_id FROM event),
+dates AS (SELECT
+	PI.plant_id,
+    (SELECT time_stamp FROM event WHERE plant_id = PI.plant_id ORDER BY time_stamp DESC LIMIT 1) AS latest_time,
+    (SELECT time_stamp FROM event WHERE plant_id = PI.plant_id ORDER BY time_stamp DESC LIMIT 1 OFFSET 4) AS fifth_time
+FROM plant_ids PI)
+
+
+SELECT
+	plant.planter_id,
+    dates.plant_id,
+    age(dates.latest_time, dates.fifth_time) / 5 AS interval_time,
+    dates.latest_time
+FROM dates
+INNER JOIN plant ON dates.plant_id = plant.id
+```
+
 _2020-05-11_
 I managed to create a view with the query created with Antons help!
 
